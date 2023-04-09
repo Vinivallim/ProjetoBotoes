@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import Botao from './src/Botao'
+import Botao1 from './src/Botao1'
+import Botao2 from './src/Botao2'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+export default () => (
+  <View style={style.App} >
+    <View style={style.App2}>
+      <View style={style.App3}>
+        <Botao />
+      </View>
     </View>
-  );
-}
+    <View style={style.App2}>
+      <View style={style.App3}>
+        <Botao1 />
+      </View>
+    </View>
+    <View style={style.App2}>
+      <View style={style.App3}>
+        <Botao2 />
+      </View>
+    </View>
+  </View>
+)
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+const style = StyleSheet.create({
+  App: {
+    backgroundColor: '#AC9',
+    flexGrow: 1,
     justifyContent: 'center',
+    flexDirection: 'row'
   },
-});
+  App2: {
+    backgroundColor: '#AC9',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+  },
+  App3: {
+    width: "80%",
+    margin: 10
+  },
+})
